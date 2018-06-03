@@ -1,0 +1,15 @@
+version: '2'
+services:
+    db:
+        image: mysql
+        volumes:
+            - "./.data/db:/var/lib/mysql"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: database
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: admin
+    php:
+        image: php:7.1-apache
+        ports:
+            - 80:80
